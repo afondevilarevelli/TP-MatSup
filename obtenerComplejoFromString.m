@@ -2,7 +2,7 @@
 %a un número complejo en forma binómica o polar. Esto sirve más adelante
 %para obtener el número de entrada de la interfaz gráfica
 function [numeroComplejo] = obtenerComplejoFromString(text)
-    if contains(text,",") && startsWith(text, "[") && endsWith(text, "]")
+    if contains(text,";") && startsWith(text, "[") && endsWith(text, "]")
         %forma polar
         C = strsplit(text,{'[',']', ','});
         aux = createPolar(str2double(C(2)), str2double(C(3)));   
