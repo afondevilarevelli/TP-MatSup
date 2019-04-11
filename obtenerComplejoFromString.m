@@ -4,7 +4,7 @@
 function [numeroComplejo] = obtenerComplejoFromString(text)
     if contains(text,";") && startsWith(text, "[") && endsWith(text, "]")
         %forma polar
-        C = strsplit(text,{'[',']', ','});
+        C = strsplit(text,{'[',']', ';'});
         aux = createPolar(str2double(C(2)), str2double(C(3)));   
     elseif contains(text,",") && startsWith(text, "(") && endsWith(text, ")")
         %forma binómica
