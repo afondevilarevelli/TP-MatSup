@@ -5,6 +5,11 @@ function [boolean] = esBinomico(num)
         b = num. angulo;
         boolean = 0;
     catch exception
-        boolean = 1;
+        try
+            c = ~isnan(num);
+            boolean = c;
+        catch exception
+            boolean = 0;
+        end
     end      
 end
