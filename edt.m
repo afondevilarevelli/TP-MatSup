@@ -22,7 +22,7 @@ function varargout = edt(varargin)
 
 % Edit the above text to modify the response to help edt
 
-% Last Modified by GUIDE v2.5 20-Apr-2019 13:19:31
+% Last Modified by GUIDE v2.5 15-May-2019 16:37:53
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -270,3 +270,12 @@ function radiobutton1_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Hint: get(hObject,'Value') returns toggle state of radiobutton1
+
+
+% --- Executes on button press in radiobutton2.
+function radiobutton2_Callback(hObject, eventdata, handles)
+% hObject    handle to radiobutton2 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hint: get(hObject,'Value') returns toggle state of radiobutton2
