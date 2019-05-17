@@ -1,4 +1,5 @@
 function varargout = operacionesBasicas(varargin)
+addpath('../src');
 % OPERACIONESBASICAS MATLAB code for operacionesBasicas.fig
 %      OPERACIONESBASICAS, by itself, creates a new OPERACIONESBASICAS or raises the existing
 %      singleton*.

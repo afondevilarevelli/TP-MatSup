@@ -1,4 +1,5 @@
 function varargout = edtBP(varargin)
+addpath('../src');
 %EDTBP MATLAB code file for edtBP.fig
 %      EDTBP, by itself, creates a new EDTBP or raises the existing
 %      singleton*.
@@ -160,9 +161,8 @@ function pushbutton2_Callback(hObject, eventdata, handles)
 guidata(hObject, handles);
 modString = handles.modulo.String;
 argString = handles.argumento.String;
-modulo = str2double(modString);
-argumento = str2double(argString);
-numeroPolar = createPolar(modulo, argumento);
+complejoString = strcat('[', modString, ';', argString, ']');
+numeroPolar = obtenerComplejoFromString(complejoString);
 numeroBin = aBinomica(numeroPolar);
 if esBinomico(numeroBin)
     set(handles.resultBinom, 'String', binomicoAString(numeroBin));
@@ -247,9 +247,8 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 guidata(hObject, handles);
 realString = handles.parteReal.String;
 imagString = handles.parteImag.String;
-real = str2double(realString);
-imag = str2double(imagString);
-numeroBin = real + 1i*imag;
+complejoString = strcat('(', realString, ',', imagString, ')');
+numeroBin = obtenerComplejoFromString(complejoString);
 numeroPolar = aPolar(numeroBin);
 if esPolar(numeroPolar)
     set(handles.resultPolar, 'String', polarAString(numeroPolar));

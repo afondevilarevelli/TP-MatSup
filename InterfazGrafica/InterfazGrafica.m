@@ -1,4 +1,5 @@
 function varargout = GUI(varargin)
+addpath('../src');
 % GUI MATLAB code for GUI.fig
 %      GUI, by itself, creates a new GUI or raises the existing
 %      singleton*.
