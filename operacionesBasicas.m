@@ -22,7 +22,7 @@ function varargout = operacionesBasicas(varargin)
 
 % Edit the above text to modify the response to help operacionesBasicas
 
-% Last Modified by GUIDE v2.5 15-May-2019 16:26:53
+% Last Modified by GUIDE v2.5 17-May-2019 11:21:51
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -78,17 +78,17 @@ function selector_Callback(hObject, eventdata, handles)
 % hObject    handle to selector (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-guidata(hObject, handles);
+%guidata(hObject, handles);
 simbolo = handles.simboloOp;
 posOperacion = get(handles.selector, 'Value');
 switch posOperacion
-    case 1 %Suma
+    case 2 %Suma
         set(simbolo, 'String', '+');
-    case 2 %Resta
+    case 3 %Resta
         set(simbolo, 'String', '-');
-    case 3 %Multiplicacion
+    case 4 %Multiplicacion
         set(simbolo, 'String', '*');
-    otherwise %Division
+    case 5 %Division
         set(simbolo, 'String', '/');
 end
 guidata(hObject, handles);
@@ -129,14 +129,16 @@ if(esPolar(num2))
 end
 if ~isnan(num1) && ~isnan(num2) 
     switch posOperacion
-        case 1 %Suma
+        case 2 %Suma
             resultado = num1 + num2;
-        case 2 %Resta
+        case 3 %Resta
             resultado = num1 - num2;
-        case 3 %Multiplicacion
+        case 4 %Multiplicacion
             resultado = num1 * num2;
-        otherwise %Division
+        case 5 %Division
             resultado = num1 / num2;
+        otherwise
+            resultado = 0;
     end
     set(handles.resultado, 'String', binomicoAString(resultado));
     guidata(hObject, handles);
@@ -217,3 +219,12 @@ function pushbutton2_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in pushbutton3.
+function pushbutton3_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton3 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+close(operacionesBasicas);
+InterfazGrafica;
