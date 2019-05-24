@@ -17,6 +17,6 @@ function [suma] = sumaFasores(ampl1, frec1, fase1, ampl2, frec2, fase2)
             suma = strcat(moduloString,'*cos(',frecString,'*t+',anguloString,')');
         end
     else 
-        suma = nan;
+        suma = 'Distintas frecuencias';
     end
 end
