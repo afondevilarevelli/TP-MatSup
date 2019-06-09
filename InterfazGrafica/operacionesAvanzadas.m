@@ -23,7 +23,7 @@ addpath('../src');
 
 % Edit the above text to modify the response to help operacionesAvanzadas
 
-% Last Modified by GUIDE v2.5 06-Jun-2019 00:15:17
+% Last Modified by GUIDE v2.5 09-Jun-2019 16:45:07
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -205,3 +205,69 @@ function resultadoRaiz_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
+
+
+
+function basePotencia_Callback(hObject, eventdata, handles)
+% hObject    handle to basePotencia (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of basePotencia as text
+%        str2double(get(hObject,'String')) returns contents of basePotencia as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function basePotencia_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to basePotencia (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function expPotencia_Callback(hObject, eventdata, handles)
+% hObject    handle to expPotencia (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of expPotencia as text
+%        str2double(get(hObject,'String')) returns contents of expPotencia as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function expPotencia_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to expPotencia (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+% --- Executes on button press in pushbutton3.
+function pushbutton3_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton3 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+guidata(hObject, handles);
+baseString = handles.basePotencia.String;
+exponenteString = handles.expPotencia.String;
+base = obtenerComplejoFromString(baseString);
+exponente = str2num(exponenteString);
+if isnumeric(exponente) && (esPolar(base) || esBinomico(base))
+    if esPolar(base)
+       base = aBinomica(base); 
+    end
+    resultadoString = binomicoAString(potencia(base,exponente));
+    set(handles.resultadoPotencia, 'String', resultadoString);
+end
+guidata(hObject, handles);
