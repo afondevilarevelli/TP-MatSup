@@ -1,9 +1,0 @@
-    Las operaciones básica (suma, resta, division y multiplicación) de complejos
-ya las hace Matlab por defecto. Siempre los numeros deben estar en la forma
-binómica. Ej:
-            numFormaBinomica1 = 4 + 7j;
-            numFormaBinomica2 = 6 - 2j;
-            suma = numFormaBinomica1 + numFormaBinomica2
-            resta = numFormaBinomica1 - numFormaBinomica2
-            division = numFormaBinomica1 / numFormaBinomica2
-            multiplicacion = numFormaBinomica1 * numFormaBinomica2
