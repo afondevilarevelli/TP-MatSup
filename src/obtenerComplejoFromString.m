@@ -3,8 +3,8 @@
 %adelante para obtener el número de entrada de la interfaz gráfica.
 %Devuelve nan(notANumber) si no es de ninguna forma.
 function [numeroComplejo] = obtenerComplejoFromString(text)
-    expresionPolar = '\[\ *-?((\d+\.?\d*)|((\d+\*)?pi(\/\d+)?));\ *-?((\d+\.?\d*)|((\d+\*)?pi(\/\d+)?))\]';
-    expresionBinomica = '\(\ *-?((\d+\.?\d*)|((\d+\*)?pi(\/\d+)?)),\ *-?((\d+\.?\d*)|((\d+\*)?pi(\/\d+)?))\)';
+    expresionPolar = '\[\ *-?((\d+\.?\d*)|((\d+\*)?pi(\/\d+)?))\ *-?;\ *-?((\d+\.?\d*)|((\d+\*)?pi(\/\d+)?))\ *-?\]';
+    expresionBinomica = '\(\ *-?((\d+\.?\d*)|((\d+\*)?pi(\/\d+)?))\ *-?,\ *-?((\d+\.?\d*)|((\d+\*)?pi(\/\d+)?))\ *-?\)';
     
     [iPolar, fPolar] = regexp(text,expresionPolar);
     if ~isempty(iPolar) && iPolar == 1 && strlength(text) == fPolar

@@ -109,7 +109,7 @@ if isnumeric(ampl1) && isnumeric(ampl2) && isnumeric(fase1) && isnumeric(fase2) 
     if(strcmp(funcion2String,'seno'))
         fase2 = fase2 - pi/2;
     end
-    if ampl1 == 0 || ampl2 == 0
+    if ampl1 == 0 && ampl2 == 0
         resultado = '0';
     else
         resultado = sumaFasores(ampl1,frec1,fase1, ampl2,frec2,fase2);
